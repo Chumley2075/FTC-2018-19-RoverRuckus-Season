@@ -112,7 +112,7 @@ public class RoverBotArcade extends LinearOpMode {
             // Use gamepad buttons to move arm up (Y) and down (A)
 
             // Send telemetry message to signify robot running;
-            
+
             // Pace this loop so jaw action is reasonable speed.
             sleep(50);
         }

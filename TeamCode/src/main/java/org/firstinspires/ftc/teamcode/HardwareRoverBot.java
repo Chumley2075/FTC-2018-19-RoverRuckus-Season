@@ -59,9 +59,9 @@ public class HardwareRoverBot
     public DcMotor  rearRightDrive  = null;
     public DcMotor  frontLeftDrive  = null;
     public DcMotor  frontRightDrive  = null;
-    public DcMotor  cubeLift = null;
-    public Servo leftClaw = null;
-    public Servo rightClaw = null;
+   // public DcMotor  cubeLift = null;
+  //  public Servo leftClaw = null;
+   // public Servo rightClaw = null;
 
     /* local OpMode members. */
     HardwareMap hwMap           =  null;
@@ -81,20 +81,20 @@ public class HardwareRoverBot
         rearRightDrive  = hwMap.get(DcMotor.class, "rearRightDrive");
         frontLeftDrive  = hwMap.get(DcMotor.class, "frontLeftDrive");
         frontRightDrive = hwMap.get(DcMotor.class, "frontRightDrive");
-        cubeLift = hwMap.get(DcMotor.class, "cubeLift");
+       // cubeLift = hwMap.get(DcMotor.class, "cubeLift");
 
         rearLeftDrive.setDirection(DcMotor.Direction.FORWARD); // Set to REVERSE if using AndyMark motors
         rearRightDrive.setDirection(DcMotor.Direction.REVERSE);// Set to FORWARD if using AndyMark motors
         frontLeftDrive.setDirection(DcMotor.Direction.FORWARD); // Set to REVERSE if using AndyMark motors
         frontRightDrive.setDirection(DcMotor.Direction.REVERSE);// Set to FORWARD if using AndyMark motors
-        cubeLift.setDirection(DcMotor.Direction.FORWARD); // Set to REVERSE if using AndyMark motors
+     //   cubeLift.setDirection(DcMotor.Direction.FORWARD); // Set to REVERSE if using AndyMark motors
 
         // Set all motors to zero power
         rearLeftDrive.setPower(0);
         rearRightDrive.setPower(0);
         frontLeftDrive.setPower(0);
         frontRightDrive.setPower(0);
-        cubeLift.setPower(0);
+      //  cubeLift.setPower(0);
 
         // Set all motors to run without encoders.
         // May want to use RUN_USING_ENCODERS if encoders are installed.
@@ -102,12 +102,12 @@ public class HardwareRoverBot
         rearRightDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         frontLeftDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         frontRightDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        cubeLift.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+     //   cubeLift.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
 
         // Define and initialize ALL installed servos.
-        leftClaw = hwMap.get(Servo.class, "leftClaw");
-        rightClaw = hwMap.get(Servo.class, "rightClaw");
+      //  leftClaw = hwMap.get(Servo.class, "leftClaw");
+      //  rightClaw = hwMap.get(Servo.class, "rightClaw");
 
     }
  }
