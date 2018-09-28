@@ -47,7 +47,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
  * Remove or comment out the @Disabled line to add this opmode to the Driver Station OpMode list
  */
 
-@TeleOp(name="RoverBot: Teleop Tank", group="RoverBot")
+@TeleOp(name="RoverBotTeleopMacanumTest", group="RoverBot")
 //@Disabled
 public class RoverBotTeleopMacanumTest extends OpMode{
 
@@ -90,12 +90,25 @@ public class RoverBotTeleopMacanumTest extends OpMode{
     public void loop() {
         //Mechanum test here
         if (gamepad1.left_trigger > 0) {
-            double triggerValue=gamepad1.left_trigger;
+            double triggerValue = gamepad1.left_trigger;
 
             robot.rearLeftDrive.setPower(triggerValue);
             robot.rearRightDrive.setPower(-triggerValue);
             robot.frontLeftDrive.setPower(-triggerValue);
             robot.frontRightDrive.setPower(triggerValue);
+
+        } else if (gamepad1.right_trigger> 0){
+            double triggerValue=gamepad1.right_trigger;
+
+            robot.rearLeftDrive.setPower(-triggerValue);
+            robot.rearRightDrive.setPower(triggerValue);
+            robot.frontLeftDrive.setPower(triggerValue);
+            robot.frontRightDrive.setPower(-triggerValue);
+        } else {
+            robot.rearLeftDrive.setPower(0);
+            robot.rearRightDrive.setPower(0);
+            robot.frontLeftDrive.setPower(0);
+            robot.frontRightDrive.setPower(0);
         }
 
     }
