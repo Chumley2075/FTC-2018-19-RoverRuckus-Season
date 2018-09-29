@@ -87,16 +87,15 @@ public class RoverBotArcade extends LinearOpMode {
             // In this mode the Left stick moves the robot fwd and back, the Right stick turns left and right.
             // This way it's also easy to just drive straight, or just turn.
             drive = -gamepad1.left_stick_y;
-            turn  =  gamepad1.right_stick_x;
+            turn = gamepad1.right_stick_x;
 
             // Combine drive and turn for blended motion.
-            left  = drive + turn;
+            left = drive + turn;
             right = drive - turn;
 
             // Normalize the values so neither exceed +/- 1.0
             max = Math.max(Math.abs(left), Math.abs(right));
-            if (max > 1.0)
-            {
+            if (max > 1.0) {
                 left /= max;
                 right /= max;
             }
@@ -106,14 +105,15 @@ public class RoverBotArcade extends LinearOpMode {
             robot.rearRightDrive.setPower(right);
             robot.frontRightDrive.setPower(right);
             robot.frontLeftDrive.setPower(left);
+            //control the lift
+            if (gamepad2.y) {
+                robot.lift.setPower(1);
+            } else if (gamepad2.a) {
+                robot.lift.setPower(-1);
+            } else {
+            robot.lift.setPower(0);
+            }
 
-            // Use gamepad left & right Bumpers to open and close the claw
-
-            // Use gamepad buttons to move arm up (Y) and down (A)
-
-            // Send telemetry message to signify robot running;
-
-            // Pace this loop so jaw action is reasonable speed.
             sleep(50);
         }
     }
